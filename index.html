@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lakshya Kishore Panwar | Resume</title>
+<meta name="description" content="Resume of Lakshya Kishore Panwar, First-Year B.E. Information Technology student.">
+<style>
+  :root {
+    --bg: #f4f6fb;
+    --card: #ffffff;
+    --text: #1f2937;
+    --muted: #6b7280;
+    --primary: #2563eb;
+    --primary-dark: #1e3a8a;
+    --border: #e5e7eb;
+    --radius: 14px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+  }
+  a { color: var(--primary); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  /* NAV */
+  nav {
+    position: sticky; top: 0; z-index: 10;
+    background: rgba(255,255,255,.92);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+  }
+  nav .inner {
+    max-width: 1100px; margin: auto; padding: 12px 20px;
+    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px;
+  }
+  nav .brand { font-weight: 700; color: var(--primary-dark); }
+  nav ul { list-style: none; display: flex; gap: 18px; flex-wrap: wrap; }
+  nav ul a { color: var(--text); font-size: .92rem; font-weight: 500; }
+  nav ul a:hover { color: var(--primary); text-decoration: none; }
+
+  /* HERO */
+  header.hero {
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+    color: #fff;
+    padding: 64px 20px 80px;
+  }
+  .hero .inner { max-width: 1100px; margin: auto; display: flex; align-items: center; gap: 32px; flex-wrap: wrap; }
+  .avatar {
+    width: 120px; height: 120px; border-radius: 50%;
+    background: rgba(255,255,255,.15);
+    border: 3px solid rgba(255,255,255,.6);
+    display: grid; place-items: center;
+    font-size: 2.6rem; font-weight: 700; letter-spacing: 2px;
+  }
+  .hero h1 { font-size: 2.4rem; line-height: 1.15; }
+  .hero .role { font-size: 1.1rem; opacity: .9; margin-top: 6px; }
+  .hero .links { margin-top: 20px; display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 10px 18px; border-radius: 999px;
+    font-weight: 600; font-size: .92rem;
+    border: 2px solid #fff; color: #fff; transition: .2s;
+  }
+  .btn:hover { background: #fff; color: var(--primary-dark); text-decoration: none; }
+  .btn.solid { background: #fff; color: var(--primary-dark); }
+  .btn.solid:hover { background: transparent; color: #fff; }
+  .btn svg { width: 18px; height: 18px; fill: currentColor; }
+
+  /* LAYOUT */
+  main {
+    max-width: 1100px; margin: -40px auto 40px; padding: 0 20px;
+    display: grid; grid-template-columns: 1fr 2fr; gap: 24px;
+  }
+  aside, .content { display: flex; flex-direction: column; gap: 24px; }
+  section.card {
+    background: var(--card); border-radius: var(--radius);
+    padding: 26px 28px; border: 1px solid var(--border);
+    box-shadow: 0 6px 20px rgba(15, 23, 42, .05);
+  }
+  section.card h2 {
+    font-size: 1.05rem; text-transform: uppercase; letter-spacing: 1.2px;
+    color: var(--primary-dark); margin-bottom: 16px;
+    padding-bottom: 8px; border-bottom: 2px solid var(--primary);
+    display: inline-block;
+  }
+
+  /* CONTACT */
+  .contact-list { list-style: none; display: grid; gap: 12px; font-size: .95rem; }
+  .contact-list span { display: block; color: var(--muted); font-size: .78rem; text-transform: uppercase; letter-spacing: .8px; }
+  .contact-list a, .contact-list div { word-break: break-word; }
+
+  /* SKILL TAGS */
+  .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tag {
+    background: #eef3ff; color: var(--primary-dark);
+    padding: 5px 13px; border-radius: 999px;
+    font-size: .85rem; font-weight: 600;
+  }
+  ul.bullets { padding-left: 20px; display: grid; gap: 6px; }
+  ul.bullets li::marker { color: var(--primary); }
+
+  /* TIMELINE */
+  .item { position: relative; padding-left: 22px; margin-bottom: 20px; }
+  .item:last-child { margin-bottom: 0; }
+  .item::before {
+    content: ""; position: absolute; left: 0; top: 8px;
+    width: 10px; height: 10px; border-radius: 50%; background: var(--primary);
+  }
+  .item::after {
+    content: ""; position: absolute; left: 4px; top: 22px; bottom: -20px;
+    width: 2px; background: var(--border);
+  }
+  .item:last-child::after { display: none; }
+  .item h3 { font-size: 1.02rem; }
+  .item .sub { color: var(--muted); font-size: .92rem; }
+  .badge {
+    display: inline-block; margin-top: 4px;
+    background: #ecfdf5; color: #047857;
+    padding: 2px 10px; border-radius: 999px; font-size: .8rem; font-weight: 600;
+  }
+
+  /* PROJECTS */
+  .project { padding: 14px 16px; border: 1px solid var(--border); border-radius: 10px; margin-bottom: 14px; }
+  .project:last-child { margin-bottom: 0; }
+  .project h3 { font-size: 1rem; color: var(--primary-dark); }
+  .project p { font-size: .94rem; color: #374151; margin-top: 4px; }
+  .project a { font-size: .88rem; font-weight: 600; display: inline-block; margin-top: 6px; }
+
+  footer { text-align: center; color: var(--muted); font-size: .85rem; padding: 0 20px 30px; }
+
+  /* RESPONSIVE */
+  @media (max-width: 820px) {
+    main { grid-template-columns: 1fr; }
+    .hero h1 { font-size: 1.9rem; }
+    .hero .inner { justify-content: center; text-align: center; }
+    .hero .links { justify-content: center; }
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  @keyframes avatarPop {
+    0%   { opacity: 0; transform: scale(.6); }
+    70%  { transform: scale(1.06); }
+    100% { opacity: 1; transform: scale(1); }
+  }
+  @keyframes growLine {
+    from { transform: scaleY(0); }
+    to   { transform: scaleY(1); }
+  }
+
+  nav { animation: fadeIn .6s ease both; }
+  .avatar { animation: avatarPop .7s cubic-bezier(.2,.8,.2,1) both; }
+  .hero h1 { animation: fadeUp .7s ease .15s both; }
+  .hero .role { animation: fadeUp .7s ease .3s both; }
+  .hero .links { animation: fadeUp .7s ease .45s both; }
+
+  section.card {
+    animation: fadeUp .6s ease both;
+    transition: transform .25s ease, box-shadow .25s ease;
+  }
+  main > aside > section.card:nth-child(1) { animation-delay: .5s; }
+  main > aside > section.card:nth-child(2) { animation-delay: .6s; }
+  main > aside > section.card:nth-child(3) { animation-delay: .7s; }
+  main > aside > section.card:nth-child(4) { animation-delay: .8s; }
+  .content > section.card:nth-child(1) { animation-delay: .5s; }
+  .content > section.card:nth-child(2) { animation-delay: .6s; }
+  .content > section.card:nth-child(3) { animation-delay: .7s; }
+
+  section.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgba(15, 23, 42, .09);
+  }
+
+  .item::after { transform-origin: top; animation: growLine .6s ease .9s both; }
+  .item:last-child::after { display: none; }
+
+  .tag { transition: transform .2s ease, background .2s ease; }
+  .tag:hover { transform: translateY(-2px); background: #dbe7ff; }
+
+  .project { transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease; }
+  .project:hover { transform: translateX(4px); border-color: var(--primary); box-shadow: 0 4px 12px rgba(37,99,235,.12); }
+
+  .btn { transition: background .2s ease, color .2s ease, transform .2s ease; }
+  .btn:hover { transform: translateY(-2px); }
+
+  nav ul a { position: relative; }
+  nav ul a::after {
+    content: ""; position: absolute; left: 0; bottom: -4px;
+    width: 0; height: 2px; background: var(--primary); transition: width .25s ease;
+  }
+  nav ul a:hover::after { width: 100%; }
+
+  /* Respect users who prefer reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation: none !important;
+      transition: none !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  /* PRINT / SAVE AS PDF */
+  @media print {
+    nav, .hero .links, footer { display: none; }
+    body { background: #fff; }
+    header.hero { background: #fff; color: #000; padding: 10px 0; }
+    .avatar { border-color: #000; background: none; }
+    main { margin: 0 auto; grid-template-columns: 1fr 2fr; }
+    section.card { box-shadow: none; break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="inner">
+    <div class="brand">Lakshya K. Panwar</div>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="inner">
+    <div class="avatar" aria-hidden="true">LP</div>
+    <div>
+      <h1>Lakshya Kishore Panwar</h1>
+      <p class="role">First-Year B.E. Student &middot; Information Technology</p>
+      <div class="links">
+        <a class="btn" href="https://github.com/Lucky-0s" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.39 7.86 10.91.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.54-3.88-1.54-.52-1.33-1.28-1.69-1.28-1.69-1.05-.72.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.77 2.7 1.26 3.36.96.1-.75.4-1.26.73-1.55-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg>
+          GitHub
+        </a>
+        <a class="btn" href="https://www.linkedin.com/in/lakshya-panwar-667b44389/" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+          LinkedIn
+        </a>
+        <a class="btn" href="mailto:luckypanwar1909@gmail.com">Email Me</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- LEFT COLUMN -->
+  <aside>
+    <section class="card" id="contact">
+      <h2>Contact</h2>
+      <ul class="contact-list">
+        <li><span>Phone</span><a href="tel:+918408802923">+91 84088 02923</a></li>
+        <li><span>Email</span><a href="mailto:luckypanwar1909@gmail.com">luckypanwar1909@gmail.com</a></li>
+        <li><span>Location</span><div>Nallasopara East, Palghar, Maharashtra &ndash; 401209</div></li>
+        <li><span>GitHub</span><a href="https://github.com/Lucky-0s" target="_blank" rel="noopener noreferrer">github.com/Lucky-0s</a></li>
+        <li><span>LinkedIn</span><a href="https://www.linkedin.com/in/lakshya-panwar-667b44389/" target="_blank" rel="noopener noreferrer">linkedin.com/in/lakshya-panwar</a></li>
+      </ul>
+    </section>
+
+    <section class="card" id="skills">
+      <h2>Technical Skills</h2>
+      <div class="tags" style="margin-bottom:14px;">
+        <span class="tag">C++</span>
+        <span class="tag">Python</span>
+      </div>
+      <ul class="bullets">
+        <li>Basic programming concepts</li>
+        <li>Problem-solving</li>
+        <li>Foundational computer &amp; software skills</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Personal Skills</h2>
+      <ul class="bullets">
+        <li>Quick learner and adaptable</li>
+        <li>Problem-solving and logical thinking</li>
+        <li>Teamwork and collaboration</li>
+        <li>Willingness to learn and improve</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Languages</h2>
+      <div class="tags">
+        <span class="tag">English</span>
+        <span class="tag">Hindi</span>
+        <span class="tag">Marathi</span>
+      </div>
+    </section>
+  </aside>
+
+  <!-- RIGHT COLUMN -->
+  <div class="content">
+    <section class="card" id="about">
+      <h2>Career Objective</h2>
+      <p>Motivated and enthusiastic first-year Bachelor of Engineering student in Information Technology at Thakur College of Engineering and Technology. Interested in programming, software development, and practical problem-solving. Eager to strengthen technical skills, learn new technologies, and gain hands-on experience through projects and internship opportunities.</p>
+    </section>
+
+    <section class="card" id="education">
+      <h2>Education</h2>
+      <div class="item">
+        <h3>Bachelor of Engineering (B.E.) &ndash; Information Technology</h3>
+        <div class="sub">Thakur College of Engineering and Technology</div>
+        <span class="badge">First Year &middot; Currently Pursuing</span>
+      </div>
+      <div class="item">
+        <h3>Higher Secondary Certificate (Class XII)</h3>
+        <div class="sub">Thakur Vidya Mandir High School and Junior College</div>
+        <span class="badge">84.1%</span>
+      </div>
+      <div class="item">
+        <h3>Secondary School Certificate (Class X)</h3>
+        <span class="badge">89.80%</span>
+      </div>
+    </section>
+
+    <section class="card" id="projects">
+      <h2>Projects</h2>
+      <div class="project">
+        <h3>Healthcare Data Storage and Retrieval System</h3>
+        <p>A basic project focused on organizing, storing, and retrieving healthcare-related data.</p>
+        <a href="https://github.com/Lucky-0s/Hospital-automation-system-in-C-" target="_blank" rel="noopener noreferrer">View on GitHub &rarr;</a>
+      </div>
+      <div class="project">
+        <h3>Library Management System</h3>
+        <p>A C++ application for managing library records such as books, members and issue/return operations.</p>
+        <a href="https://github.com/Lucky-0s/Library-Management-System" target="_blank" rel="noopener noreferrer">View on GitHub &rarr;</a>
+      </div>
+      <div class="project">
+        <h3>Basic Programming Projects</h3>
+        <p>Completed beginner-level programming exercises and projects to practise coding fundamentals.</p>
+        <a href="https://github.com/Lucky-0s/C-Projects" target="_blank" rel="noopener noreferrer">View on GitHub &rarr;</a>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer>&copy; <span id="year"></span> Lakshya Kishore Panwar</footer>
+<script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
